@@ -42,7 +42,7 @@ A Finder window will open for you to select the folder to sort.
 - You can adjust MAX_EXTENSIONS and MAX_FILES constants in the source code if needed.
 
 # Author:
-Your Name or Your Alias
+Athemane alias Hammoud Boualem
 
 # License:
 Free to use and modify.
