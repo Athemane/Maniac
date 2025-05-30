@@ -4,12 +4,11 @@
 #                                            #
 ##############################################
 
-# Program Name:
-File Sorter with GUI Folder Selection (macOS)
+# Program Name: MANIAC
 
-# Description:
-This C program lets you pick a folder using a macOS Finder window, 
-then sorts the files inside by their extension (file type). 
+# Description: This C program lets you pick a folder using a macOS Finder window, 
+then sorts the files inside by their extension.
+
 
 It creates subfolders for each extension and renames the files 
 inside each folder with numbered filenames like 001.txt, 002.pdf, etc. 
