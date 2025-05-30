@@ -4,9 +4,11 @@
 #                                            #
 ##############################################
 
-# Program Name: MANIAC
+# Program Name: 
+MANIAC
 
-# Description: This C program lets you pick a folder using a macOS Finder window, 
+# Description: 
+This C program lets you pick a folder using a macOS Finder window, 
 then sorts the files inside by their extension.
 
 
