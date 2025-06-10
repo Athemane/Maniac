@@ -1,53 +1,92 @@
-##############################################
-#                                            #
-#              R E A D   M E                 #
-#                                            #
-##############################################
+╔════════════════════════════════════════════════════════════════════╗
+║                📁 MANIAC (macOS)               ║
+╠════════════════════════════════════════════════════════════════════╣
 
-# Program Name: 
-MANIAC
+This project is a C utility that automatically sorts files in a folder
+by their extension. Each file type is moved into a subfolder named after
+its extension and renamed sequentially (001.ext, 002.ext, etc.).
+The tool uses a graphical dialog to select the folder to sort
+(macOS only).
 
-# Description: 
-This C program lets you pick a folder using a macOS Finder window, 
-then sorts the files inside by their extension.
+╔════════════════════════════════════════════════════════════════════╗
+║                           FEATURES                               ║
+╠════════════════════════════════════════════════════════════════════╣
+- Graphical folder selection (macOS)
+- Automatic sorting of files by extension
+- Creation of subfolders for each detected extension
+- Sequential renaming of files in each subfolder
+- Error handling (memory, folder access, etc.)
 
+╔════════════════════════════════════════════════════════════════════╗
+║                        PROJECT STRUCTURE                         ║
+╠════════════════════════════════════════════════════════════════════╣
 
-It creates subfolders for each extension and renames the files 
-inside each folder with numbered filenames like 001.txt, 002.pdf, etc. 
+  .
+  ├── main.c
+  ├── file_utils.h
+  ├── file_utils.c
+  ├── extension_group.h
+  ├── extension_group.c
 
-This program uses dynamic memory allocation to safely handle many files 
-and avoid crashes on macOS.
+╔════════════════════════════════════════════════════════════════════╗
+║                     COMPILATION & USAGE                          ║
+╠════════════════════════════════════════════════════════════════════╣
 
-# Features:
-- GUI folder selection using macOS Finder window
-- Groups files by extension into folders
-- Renames files with aligned numbering
-- Handles large number of files safely with dynamic memory
-- Command-line executable, easy to use
+Compilation:
+  gcc main.c file_utils.c extension_group.c -o Maniac
 
-# How to Compile:
-Open Terminal and run:
+Usage:
+  ./Maniac
 
-A Finder window will open for you to select the folder to sort.
+A dialog will open to let you choose the folder to sort.
+Files will be moved and renamed into subfolders created at
+the root of the selected folder.
 
-# Requirements:
-- macOS system
-- Terminal access
-- gcc compiler installed (comes with Xcode command line tools)
+╔════════════════════════════════════════════════════════════════════╗
+║                              EXAMPLE                             ║
+╠════════════════════════════════════════════════════════════════════╣
 
-# Notes:
-- The program only sorts regular files (ignores folders).
-- If you cancel folder selection, the program exits gracefully.
-- Max 100 different extensions and 1000 files per extension supported by default.
-- You can adjust MAX_EXTENSIONS and MAX_FILES constants in the source code if needed.
+Before:
+  /Users/you/Documents/sort
+  ├── doc1.pdf
+  ├── doc2.pdf
+  ├── image1.jpg
+  ├── script.py
 
-# Author:
-Athemane alias Hammoud Boualem
+After:
+  /Users/you/Documents/sort
+  ├── pdf/
+  │   ├── 001.pdf
+  │   └── 002.pdf
+  ├── jpg/
+  │   └── 001.jpg
+  ├── py/
+  │   └── 001.py
 
-# License:
-Free to use and modify.
+╔════════════════════════════════════════════════════════════════════╗
+║                           LIMITATIONS                            ║
+╠════════════════════════════════════════════════════════════════════╣
+- macOS only (uses osascript)
+- Limited to 1000 files per extension and 100 extensions
+- Only handles files in the root folder (no recursion)
+- Files without extension go into the 'others' folder
 
----
+╔════════════════════════════════════════════════════════════════════╗
+║                        CUSTOMIZATION                             ║
+╠════════════════════════════════════════════════════════════════════╣
+- Edit the constants in extension_group.h to handle more files/extensions.
+- To support other OSes, replace the graphical folder selection.
 
-Thank you for using this program!  
-Feel free to report issues or suggest improvements.
+╔════════════════════════════════════════════════════════════════════╗
+║                              AUTHOR                              ║
+╠════════════════════════════════════════════════════════════════════╣
+- Athemane.
+
+╔════════════════════════════════════════════════════════════════════╗
+║                              LICENSE                             ║
+╠════════════════════════════════════════════════════════════════════╣
+- Oppen Source 
+
+╚════════════════════════════════════════════════════════════════════╝
+
+                    ★★★ HAPPY SORTING! ★★★
